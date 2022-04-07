@@ -19,12 +19,13 @@ def separate_card(cardlist):
     
     return (even_numbers,odd_numbers)
 
+
 def bytwo(x):
     y=x*2
     return y 
 
 def mult_by2_list(numbers): 
-    return list(map(multiplybytwo,numbers)) 
+    return list(map(bytwo,numbers)) 
     
     
 final_list = [] 
@@ -54,6 +55,7 @@ def sum_of_digits(digits):
     for i in digits:
         counter+=i
     return counter
+
     
 def digit_check(digit):
     total_check = total_sum+check_digit
@@ -63,3 +65,4 @@ def digit_check(digit):
     
     elif total_check %10!=0:
         print('Not a valid number')
+        
