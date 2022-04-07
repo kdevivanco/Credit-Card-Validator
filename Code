@@ -1,0 +1,65 @@
+def get_card():
+    card = input('Please type your card number:   ')
+    
+    stringlist = []
+    for element in card:
+        stringlist.append(element)
+    
+    cardlist=list(map(int,stringlist))
+    return cardlist
+   
+def separate_card(cardlist):
+    even_numbers=[]
+    odd_numbers=[]
+    for i in range(len(cardlist)):
+        if i % 2 == 0:
+            even_numbers.append(cardlist[i])
+        if i%2!=0:
+            odd_numbers.append(cardlist[i])
+    
+    return (even_numbers,odd_numbers)
+
+def bytwo(x):
+    y=x*2
+    return y 
+
+def mult_by2_list(numbers): 
+    return list(map(multiplybytwo,numbers)) 
+    
+    
+final_list = [] 
+
+def digits_list_even(digits_object):
+    for i in digits_object:
+        x = [int(a) for a in str(i)] #extracting digits
+        digit_list = list(x) #creating list of digits per number
+        final_list.append(digit_list) #concatenate all lists of every number
+        
+    digits_alone = [inner for outer in final_list for inner in outer]
+    
+    return digits_alone  
+
+def digits_list_add_odd(digits_object):
+    for i in digits_object:
+        x = [int(a) for a in str(i)] #extracting digits
+        digit_list = list(x) #creating list of digits per number
+        final_list.append(digit_list) #concatenate all lists of every number
+        
+    digits_alone = [inner for outer in final_list for inner in outer]
+    
+    return digits_alone  
+    
+def sum_of_digits(digits):
+    counter = 0 
+    for i in digits:
+        counter+=i
+    return counter
+    
+def digit_check(digit):
+    total_check = total_sum+check_digit
+    print(total_check)
+    if total_check %10 ==0:
+        print ('Your card is real')
+    
+    elif total_check %10!=0:
+        print('Not a valid number')
