@@ -1,25 +1,27 @@
 print ('Hello! We will validate your card now... ')
 print ('\n')
 
-def creditcard_validator():
-    # assign card to a list 
-    card_as_list=get_card()
+# assign card to a list 
+card_as_list=get_card()
 
-    #separate card - unpack the tuple 
-    numbers_to_unpack=separate_card(card_as_list)
-    even_numbers,odd_numbers=numbers_to_unpack
+#separate card - unpack the tuple 
+numbers_to_unpack=separate_card(card_as_list)
+even_numbers,odd_numbers=numbers_to_unpack
 
     #multiply evens 
-    multiplied_even=mult_by2_list(even_numbers)
+multiplied_even=mult_by2_list(even_numbers)
 
     #add evens
-    sum_even=sum(digits_list_even(multiplied_even))
+clean_even_list = digits_list_even(multiplied_even)
+sum_even=sum(clean_even_list)
 
     #pop check digit, and assign 
-    check_digit=odd_numbers.pop()
+check_digit=odd_numbers.pop()
 
     #add odds to list
-    total_sum=sum(digits_list_add_odd(odd_numbers))
+all_digit_list = digits_list_add_odd(odd_numbers)
+total_sum=sum(all_digit_list)
 
     #digit check 
-    digit_check(check_digit)
+
+digit_check(check_digit)
